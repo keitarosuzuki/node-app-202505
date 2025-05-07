@@ -1,47 +1,60 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <v-app>
+    <v-main>
+      <v-container>
+        <v-text-field />
+        <v-btn>登録</v-btn>
+        <v-container>
+          <v-card class="my-5" variant="outlined">
+            <v-card-title>todo</v-card-title>
+            <v-card-actions>
+              <v-btn variant="outlined">完了</v-btn>
+              <v-btn variant="outlined">編集</v-btn>
+              <v-btn variant="outlined">削除</v-btn>
+            </v-card-actions>
+          </v-card>
+          <v-card class="my-5" variant="outlined">
+            <v-card-title>todo</v-card-title>
+            <v-card-actions>
+              <v-btn variant="outlined">完了</v-btn>
+              <v-btn variant="outlined">編集</v-btn>
+              <v-btn variant="outlined">削除</v-btn>
+            </v-card-actions>
+          </v-card>
+          <v-card class="my-5" variant="outlined">
+            <v-card-title>todo</v-card-title>
+            <v-card-actions>
+              <v-btn variant="outlined">完了</v-btn>
+              <v-btn variant="outlined">編集</v-btn>
+              <v-btn variant="outlined">削除</v-btn>
+            </v-card-actions>
+          </v-card>
+          <v-card class="my-5" variant="outlined">
+            <v-card-title>
+              <v-text-field label="todo" variant="underlined" />
+            </v-card-title>
+            <v-card-actions>
+              <v-btn variant="outlined">完了</v-btn>
+              <v-btn variant="outlined">編集</v-btn>
+              <v-btn variant="outlined">削除</v-btn>
+            </v-card-actions>
+          </v-card>
+          <v-card class="my-5" variant="outlined">
+            <v-card-title class="text-decoration-line-through">
+              todo
+            </v-card-title>
+            <v-card-actions>
+              <v-btn variant="outlined">完了</v-btn>
+              <v-btn variant="outlined">編集</v-btn>
+              <v-btn variant="outlined">削除</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-container>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+<script lang="ts" setup>
+//
+</script>
