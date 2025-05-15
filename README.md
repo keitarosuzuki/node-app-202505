@@ -8,14 +8,13 @@
 ### フロントエンド
 
 * Vue.js
-* Vuetify か Bootstrap（時間取らなかったらなんでもいい）
-* Pinia（必要なら。Vuexでも可）
+* Vuetify
+* axios
 
 ### バックエンド
 
 * Node.js
   * expressとやら
-* SQL
 * PostgreSQL
 
 ## パッとスケジュール
