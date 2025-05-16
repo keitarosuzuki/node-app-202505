@@ -46,7 +46,12 @@ app.post("/api/tasks", async (req, res) => {
       "INSERT INTO tasks (name) VALUES ($1) RETURNING *",
       [name]
     );
-    res.status(201).json(result.rows[0]); // 作成したタスクを返す
+
+    const countResult = await pool.query("SELECT COUNT(*) FROM tasks");
+    const count = parseInt(countResult.rows[0].count, 10);
+    res.status(201).json({
+      message: `「${result.rows[0].name}」を登録しました（残り${count}件）`,
+    });
   } catch (err) {
     console.error(err);
     res.status(500).send("サーバーエラー");
@@ -68,7 +73,11 @@ app.put("/api/tasks/:id", async (req, res) => {
       return res.status(404).json({ error: "タスクが見つかりません" });
     }
 
-    res.json(result.rows[0]);
+    const countResult = await pool.query("SELECT COUNT(*) FROM tasks");
+    const count = parseInt(countResult.rows[0].count, 10);
+    res.json({
+      message: `"${result.rows[0].name}" を更新しました（残り${count}件）`,
+    });
   } catch (err) {
     console.error(err);
     res.status(500).send("サーバーエラー");
@@ -89,7 +98,11 @@ app.delete("/api/tasks/:id", async (req, res) => {
       return res.status(404).json({ error: "タスクが見つかりません" });
     }
 
-    res.json({ message: "削除しました", task: result.rows[0] });
+    const countResult = await pool.query("SELECT COUNT(*) FROM tasks");
+    const count = parseInt(countResult.rows[0].count, 10);
+    res.json({
+      message: `"${result.rows[0].name}" を削除しました（残り${count}件）`,
+    });
   } catch (err) {
     console.error(err);
     res.status(500).send("サーバーエラー");
