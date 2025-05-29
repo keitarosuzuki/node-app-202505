@@ -1,10 +1,10 @@
 <template>
   <v-app>
     <v-main>
-      <v-snackbar v-model="snackbar" timeout="3000" location="top right" color="grey-darken-3">
+      <v-snackbar v-model="snackbar" timeout="3000" location="top" color="grey-darken-3">
         {{ snackbarMessage }}
       </v-snackbar>
-      <v-container>
+      <v-container class="mx-auto" style="max-width: 800px;">
         <v-text-field v-model="newTaskName" label="新しいタスク" @keyup.enter="addTask" />
         <v-btn @click="addTask">登録</v-btn>
 
